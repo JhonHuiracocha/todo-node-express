@@ -1,5 +1,5 @@
 import "dotenv/config";
-import "./config/database";
+import "./database";
 import app from "./app";
 
 app.listen(app.get("port"), () => {
