@@ -25,9 +25,10 @@ export const getTasks = async (req, res) => {
   try {
     const take = parseInt(req.query.take) || 10;
     const skip = parseInt(req.query.skip) || 0;
+    
     const tasks = await taskService.getTasks(take, skip);
 
-    return res.json({ tasks });
+    return res.json(tasks);
   } catch (error) {
     return res.status(500).json({ message: "Internal server error." });
   }
